@@ -23,10 +23,13 @@ jobs:
           - Raphael
           - Donatello
           - Michelangelo
+    outputs:
+      names: ${{steps.accumulate.outputs.names}}
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - id: accumulate
+        uses: ./
         with:
-          outputs: 'todo: can you even do this?'
+          outputs: ${{steps.accumulate.outputs.names}}
           key: names
           value: ${{matrix.name}}
