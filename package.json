@@ -2,7 +2,7 @@
   "name": "accumulate-output",
   "version": "0.1.0",
   "description": "Capture the output of all matrix runs",
-  "main": "index.js",
+  "main": "lib/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/drewwyatt/accumulate-output"
@@ -10,6 +10,16 @@
   "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "prepare": "concurrently -m 1 'yarn build' 'yarn package'",
+    "test": "jest",
+    "validate": "concurrently 'yarn:validate:*'",
+    "validate:format": "prettier --check **/*.ts",
+    "validate:types": "tsc --noEmit"
+  },
   "dependencies": {
     "@actions/core": "^1.2.6"
   },
@@ -18,6 +28,7 @@
     "@types/jest": "^26.0.22",
     "@types/node": "^14.14.36",
     "@vercel/ncc": "^0.27.0",
+    "concurrently": "^6.0.0",
     "jest": "^26.6.3",
     "jest-circus": "^26.6.3",
     "js-yaml": "^4.0.0",

@@ -2,6 +2,9 @@ name: accumulate-output
 description: Capture the output of all matrix runs
 author: Drew Wyatt
 inputs:
+  outputs:
+    required: true
+    description: Job outputs object
   key:
     required: true
     description: Outputs key to accumulate data to
