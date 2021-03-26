@@ -3,7 +3,7 @@ description: Capture the output of all matrix runs
 author: Drew Wyatt
 inputs:
   outputs:
-    required: true
+    required: false
     description: Job outputs object
     default: '[]'
   key:
