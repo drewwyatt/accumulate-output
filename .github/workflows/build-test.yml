@@ -1,0 +1,25 @@
+name: build-test
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: yarn
+      - run: yarn validate
+      - run: yarn prepare
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          outputs: 'todo: can you even do this?'
+          key: names
+          value: Leonardo
