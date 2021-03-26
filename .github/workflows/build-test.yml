@@ -24,12 +24,12 @@ jobs:
           - Donatello
           - Michelangelo
     outputs:
-      names: ${{steps.accumulate.outputs.names || ''}}
+      names: ${{steps.accumulate.outputs.names}}
     steps:
       - uses: actions/checkout@v2
       - id: accumulate
         uses: ./
         with:
-          outputs: ${{steps.accumulate.outputs.names}}
+          outputs: ${{steps.accumulate.outputs.names || ''}}
           key: names
           value: ${{matrix.name}}
