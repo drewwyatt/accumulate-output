@@ -1,0 +1,28 @@
+{
+  "name": "accumulate-output",
+  "version": "0.1.0",
+  "description": "Capture the output of all matrix runs",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewwyatt/accumulate-output"
+  },
+  "author": "Drew Wyatt <drew.j.wyatt@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@actions/core": "^1.2.6"
+  },
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.0",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.14.36",
+    "@vercel/ncc": "^0.27.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "js-yaml": "^4.0.0",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.4",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,13 @@
+name: accumulate-output
+description: Capture the output of all matrix runs
+author: Drew Wyatt
+inputs:
+  key:
+    required: true
+    description: Outputs key to accumulate data to
+  value:
+    required: true
+    description: Individual value from a matrix run to be accumulated
+runs:
+  using: node12
+  main: dist/index.js
