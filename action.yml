@@ -5,6 +5,7 @@ inputs:
   outputs:
     required: true
     description: Job outputs object
+    default: '[]'
   key:
     required: true
     description: Outputs key to accumulate data to

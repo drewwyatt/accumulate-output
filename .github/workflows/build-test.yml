@@ -30,6 +30,6 @@ jobs:
       - id: accumulate
         uses: ./
         with:
-          outputs: ${{steps.accumulate.outputs.names || ''}}
+          outputs: ${{steps.accumulate.outputs.names}}
           key: names
           value: ${{matrix.name}}
