@@ -16,10 +16,17 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        name:
+          - Leonardo
+          - Raphael
+          - Donatello
+          - Michelangelo
     steps:
       - uses: actions/checkout@v2
       - uses: ./
         with:
           outputs: 'todo: can you even do this?'
           key: names
-          value: Leonardo
+          value: ${{matrix.name}}
