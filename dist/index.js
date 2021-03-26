@@ -30,13 +30,13 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __importStar(__nccwpck_require__(186));
 const run = async () => {
     try {
-        const outputs = core.getInput('outputs');
+        const outputs = core.getInput('outputs') ?? '[]';
         const key = core.getInput('key', { required: true });
         const value = core.getInput('value', { required: true });
         core.info(`outputs: ${outputs}`);
         core.info(`key: ${key}`);
         core.info(`value: ${value}`);
-        core.setOutput('hello', 'world');
+        core.setOutput(key, value);
     }
     catch (err) {
         if (err instanceof Error) {
