@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 
 const run = async () => {
   try {
-    const outputs = core.getInput('outputs', { required: true })
+    const outputs = core.getInput('outputs')
     const key = core.getInput('key', { required: true })
     const value = core.getInput('value', { required: true })
 
