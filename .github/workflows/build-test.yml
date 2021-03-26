@@ -28,6 +28,8 @@ jobs:
       names: ${{steps.accumulate.outputs.names}}
     steps:
       - uses: actions/checkout@v2
+      - name: Can I access this at the job level?
+        run: echo "${{outputs.names}}"
       - id: accumulate
         uses: ./
         with:
